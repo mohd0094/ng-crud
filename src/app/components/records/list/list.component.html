@@ -1,0 +1,59 @@
+<div class="row justify-content-between mb-3" >
+    <div class="col-3">
+        <div class="input-group shadow   mb-3">
+            <input type="text" [(ngModel)]="searchText" (keyup)="searchInput()"  class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-secondary" type="button" (click)="searchData()" id="button-addon2">Search</button>
+          </div>
+    </div>
+
+    <div class="col-3 text-right">
+        <button type="button" (click)="addNewUser()" class="btn btn-primary shadow">Add New User</button>
+    </div>
+</div>
+
+
+
+<div class="bd-example shadow">
+
+    <table class="table table-hover ">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Designation</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="getData; else loading">
+
+            <tr *ngFor="let dataIndex = index; let data of getData | filter:searchText | paginate: {itemsPerPage: 5, currentPage: p, totalItems: totalLenght } ">
+                <th scope="row">{{ dataIndex +1 }}</th>
+                <td>{{ data.fullName }}</td>
+                <td>{{ data.email }}</td>
+                <td>{{ data.mobile }}</td>
+                <td>{{ data.designation }}</td>
+                <td>
+                    <button type="button" (click)="editUser(data.id)" class="btn btn-info btn-sm me-3">Edit</button>
+                    <button type="button" (click)="deleteUser(data.id)" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+
+        <ng-template #loading>
+            <p>Loading...</p>
+        </ng-template>
+
+    </table>
+
+
+
+</div>
+
+<div class="d-flex justify-content-center shadow bg-white mb-3">
+    <div class="pagination mt-3 me-4">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

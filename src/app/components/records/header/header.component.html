@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-semibold">Angular CRUD Operations</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="col-8 text-center">
+        <ng-template [ngIf]="hero">
+            <div class="h5">{{hero.name}}</div>
+          </ng-template>
+    </div>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item" *ngIf="listActive">
+            <a class="btn btn-success shadow" routerLink="/records/list">View User list</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-warning shadow" >Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

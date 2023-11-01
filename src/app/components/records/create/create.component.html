@@ -1,0 +1,53 @@
+<div class="container">
+    <!-- main app container -->
+    <div class="col-6 mx-auto">
+        <div class="card  m-3">
+            <h5 class="card-header">New user create form</h5>
+            <div class="card-body">
+                <form [formGroup]="createUserForm" (submit)="onSubmit()">
+
+                    <div class=" mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" formControlName="fullName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['fullName'].errors }" />
+                        <div *ngIf="submitted && f['fullName'].errors " class="invalid-feedback">
+                            <div *ngIf="f['fullName'].errors['required']">Full Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" formControlName="email" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" required="" />
+                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['email'].errors['required']">Email is required</div>
+                            <div *ngIf="f['email'].errors['pattern']">Email must be a valid</div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Mobile</label>
+                        <input type="text" formControlName="mobile" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['mobile'].errors }" />
+                        <div *ngIf="submitted && f['mobile'].errors" class="invalid-feedback">
+                            <div *ngIf="f['mobile'].errors['required']">Mobile is required</div>
+                            <div *ngIf="f['mobile'].errors['mobile']">Mobile must be a valid</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Designation</label>
+                        <input type="text" formControlName="designation" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['designation'].errors }" />
+                        <div *ngIf="submitted && f['designation'].errors" class="invalid-feedback">
+                            <div *ngIf="f['designation'].errors['required']">Designation is required</div>
+                            <div *ngIf="f['designation'].errors['mobile']">Designation must be a valid</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+.pagination::ng-deep .ngx-pagination {
+    --bs-pagination-padding-x: 0.75rem;
+    --bs-pagination-padding-y: 0.375rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: var(--bs-link-color);
+    --bs-pagination-bg: var(--bs-body-bg);
+    --bs-pagination-border-width: var(--bs-border-width);
+    --bs-pagination-border-color: var(--bs-border-color);
+    --bs-pagination-border-radius: var(--bs-border-radius);
+    --bs-pagination-hover-color: var(--bs-link-hover-color);
+    --bs-pagination-hover-bg: var(--bs-tertiary-bg);
+    --bs-pagination-hover-border-color: var(--bs-border-color);
+    --bs-pagination-focus-color: var(--bs-link-hover-color);
+    --bs-pagination-focus-bg: var(--bs-secondary-bg);
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    --bs-pagination-active-color: #fff;
+    --bs-pagination-active-bg: #0d6efd;
+    --bs-pagination-active-border-color: #0d6efd;
+    --bs-pagination-disabled-color: var(--bs-secondary-color);
+    --bs-pagination-disabled-bg: var(--bs-secondary-bg);
+    --bs-pagination-disabled-border-color: var(--bs-border-color);
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+.pagination::ng-deep .ngx-pagination li{
+    margin: 0;
+}
+.pagination::ng-deep .ngx-pagination li::after,
+.pagination::ng-deep .ngx-pagination li::before,
+.pagination::ng-deep .ngx-pagination li a::after,
+.pagination::ng-deep .ngx-pagination li a::before{
+    display: none;
+}
+.pagination::ng-deep .ngx-pagination li  a {
+    position: relative;
+    display: block;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: var(--bs-pagination-color);
+    text-decoration: none;
+    background-color: var(--bs-pagination-bg);
+    border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.pagination::ng-deep .ngx-pagination .current{
+    z-index: 3;
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    font-size: var(--bs-pagination-font-size);
+    color: var(--bs-pagination-active-color);
+    background-color: var(--bs-pagination-active-bg);
+    border-color: var(--bs-pagination-active-border-color);
+
+}
+.pagination::ng-deep .ngx-pagination li:not(:first-child) a {
+    margin-left: calc(var(--bs-border-width) * -1);
+}
+.pagination::ng-deep .ngx-pagination li:first-child a,
+.pagination::ng-deep .ngx-pagination li.pagination-previous.disabled{
+    border-top-left-radius: var(--bs-pagination-border-radius);
+    border-bottom-left-radius: var(--bs-pagination-border-radius);
+}
+.pagination::ng-deep .ngx-pagination li:last-child a,
+.pagination::ng-deep .ngx-pagination li.pagination-next.disabled {
+    border-top-right-radius: var(--bs-pagination-border-radius);
+    border-bottom-right-radius: var(--bs-pagination-border-radius);
+}
+.pagination::ng-deep .ngx-pagination li.disabled{
+    color: var(--bs-pagination-disabled-color);
+    padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+    pointer-events: none;
+    background-color: var(--bs-pagination-disabled-bg);
+    border-color: var(--bs-pagination-disabled-border-color);
+}

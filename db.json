@@ -1,0 +1,88 @@
+{
+  "employee": [
+    {
+      "id": 70,
+      "fullName": "admin",
+      "email": "adminp@gmail.com",
+      "mobile": "+1 02027298204",
+      "designation": "sadfsdaf"
+    },
+    {
+      "id": "id6018",
+      "fullName": "admin dsafsdaf",
+      "email": "adminap@gmail.com",
+      "mobile": "+1 02027298204",
+      "designation": "dsfsadf"
+    },
+    {
+      "id": "id3",
+      "fullName": "sadfsdaf",
+      "email": "admini@gmail.cod",
+      "mobile": "sdfsadf",
+      "designation": "sadfsadf"
+    },
+    {
+      "id": "id3493",
+      "fullName": "Mohd Akram",
+      "email": "mohd.akram@gmail.com",
+      "mobile": "9165537344",
+      "designation": "I am Angular developer"
+    },
+    {
+      "id": "id1628",
+      "fullName": "admin",
+      "email": "admin@gmail.com",
+      "mobile": "+1 02027298204",
+      "designation": "sdfsadf"
+    },
+    {
+      "id": "id4576",
+      "fullName": "admin",
+      "email": "admin@gmail.com",
+      "mobile": "+1 02027298204",
+      "designation": "dffgdsfg"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "signup": [
+    {
+      "id": "adminuser",
+      "fullName": "admin",
+      "password": "123",
+      "isActive": false
+    },
+    {
+      "id": "@admin",
+      "fullName": "admin",
+      "password": "123",
+      "isActive": true
+    },
+    {
+      "id": "@daina",
+      "fullName": "daina",
+      "password": "123",
+      "isActive": true
+    },
+    {
+      "id": "@akram",
+      "fullName": "akram",
+      "password": "123",
+      "isActive": true
+    },
+    {
+      "id": "@ak",
+      "fullName": "ak",
+      "password": "123",
+      "isActive": true
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
